@@ -20,7 +20,7 @@ const useLLM = () => {
     setPlanError(false);
     setInsights([]);
 
-    const wsUrl = `ws://127.0.0.1:8000/ws/research`;
+    const wsUrl = import.meta.env.VITE_WS_URL || `ws://127.0.0.1:8000/ws/research`;
     const ws = new WebSocket(wsUrl);
 
     ws.onopen = () => {
